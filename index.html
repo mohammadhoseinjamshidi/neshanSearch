@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Neshan Map Example (Search)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css" rel="stylesheet" type="text/css">
+    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" type="text/javascript"></script>
+    <style>
+        .panel {
+            overflow: scroll;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: fit-content;
+            background-color: aliceblue;
+            opacity: 0.9;
+            border: 3px solid #4C3FE4;
+            padding: 10px;
+            position: absolute;
+            z-index: 2;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="panel" class="panel" style="height: fit-content;">
+        <label dir="rtl" style="margin-left: 50%;">عبارت جستجو</label>
+        <input style="width: 100%;" dir="rtl" type="text" placeholder="term" required id="term">
+        <h4 style="margin-left: 50%;">نقطه مرکز</h4>
+        <label>latitude</label>
+        <input  dir="ltr" type="text" placeholder="latitude" required id="center_lat">
+        <br>
+        <label>longitude</label>
+        <input  dir="ltr" type="text" placeholder="longitude" required id="center_lng">
+        <br>
+        <button id="search" style="margin-top: 10px;" onclick="search()">Search</button>
+        <!--Search_Result-->
+        <p dir="rtl" id="resultCount"></p>
+        <div id="resualt">
+
+        </div>
+
+    </div>
+    <div id="map"
+        style="width: 99%; height: 98%; background: #eee; border: 2px solid #aaa;position: absolute;z-index: 1;"></div>
+    <p id="log">logs</p>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./server.js"></script>
+
+</body>
+
+</html>
